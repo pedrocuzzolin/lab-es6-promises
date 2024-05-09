@@ -63,8 +63,10 @@ obtainInstruction('steak', 0)
   })
   .then((step7) => {
     document.querySelector("#steak").innerHTML += `<li>${step7}</li>`;
-    return obtainInstruction('steak', 8);
     document.querySelector("#steak").innerHTML += "<li>Steak is ready!</li>";
+    return obtainInstruction('steak', 8);
+    
+    
   })
   .catch((error) => {
     console.error("Error fetching instructions:", error);
@@ -102,6 +104,7 @@ makeBroccoli();
 
 
 // Bonus 2 - Promise all
+
 Promise.all([
   obtainInstruction('brusselsSprouts', 0),
   obtainInstruction('brusselsSprouts', 1),
@@ -123,3 +126,11 @@ Promise.all([
 })
 .catch(errorCallback);
 
+/*
+/*Promise.all([promise1, promise2, promise3, ...])
+.then((steps) => {
+  steps.forEach((step) => {
+    document.querySelector("#brusselsSprouts").innerHTML += `<li>${step}</li>`;
+  });
+  document.querySelector("#brusselsSprouts").innerHTML += `<li>Brussels sprouts are ready!</li>`;
+});*/
